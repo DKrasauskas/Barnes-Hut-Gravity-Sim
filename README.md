@@ -1,4 +1,4 @@
-# *Barnes Hut simulation*
+# *Barnes Hut Simulation*
 ![image](https://github.com/user-attachments/assets/0cbf49c2-07a7-4fa0-9dda-36b9f6e26e84)
 
 Barnes-Hut gravity simulation utilizing a GPU based Quad-Tree. Written using Cuda and Thrust.
