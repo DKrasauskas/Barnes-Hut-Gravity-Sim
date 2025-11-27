@@ -1,4 +1,4 @@
-#include "Buffer.h"
+#include "../buffer.h"
 
 Buffer::Buffer(void* vertex_memory, void* indice_memory, int vertex_size, int indice_size) {
     glGenVertexArrays(1, &VAO);

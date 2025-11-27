@@ -1,11 +1,8 @@
-#pragma once
-struct grids {
-    uint16_t X_MAX, Y_MAX;
-    uint32_t* x, * y;
-};
-
-
-grids generate_coordinates(uint X_MAX, uint Y_MAX) {
+//
+// Created by dominykas on 11/27/25.
+//
+#include "zOrder.cuh"
+grids generate_coordinates(uint16_t X_MAX, uint16_t  Y_MAX) {
     grids gd = { X_MAX, Y_MAX, (uint32_t*)calloc(X_MAX, sizeof(uint32_t)), (uint32_t*)calloc(Y_MAX, sizeof(uint32_t)) };
     for (uint16_t i = 0; i < X_MAX; i++) {
         for (int k = 0; k < 32; k++) {

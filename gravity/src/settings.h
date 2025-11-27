@@ -1,4 +1,6 @@
 #pragma once
+#include "glad.h"
+#include "glfw3.h"
 
 const unsigned int SCR_WIDTH = 1200;
 const unsigned int SCR_HEIGHT = 1200;
@@ -8,13 +10,14 @@ const unsigned int SCR_HEIGHT = 1200;
 #define N_DIM  512
 #define OUT 1 // 1 to write output to mp4
 #define phi 1.0f
-#define G 100.0f
+#define G 10.0f
 
 //globals
-GLFWwindow* window;
-int stateS = 0;
+extern GLFWwindow* window;
+extern int stateS;
+extern int p;
 
-void processInput(GLFWwindow* window)
+static void processInput(GLFWwindow* window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);  
