@@ -1,8 +1,8 @@
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
-barnes/include/** linguist-vendored
-barnes/lib/** linguist-vendored
+gravity/include/** linguist-vendored
+gravity/lib/** linguist-vendored
 * text=auto
 
 ###############################################################################
