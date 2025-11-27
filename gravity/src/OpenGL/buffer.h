@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <string>
-#include "include/glad/glad.h"
-#include "include/GLFW/glfw3.h"
+#include "glad.h"
+#include "glfw3.h"
 #include "Shader.h"
 
 #define uint unsigned int

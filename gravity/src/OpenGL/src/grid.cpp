@@ -1,14 +1,7 @@
-#pragma once
-#pragma once
-
-struct Grid {
-    float* vertices;
-    uint* indices;
-    uint v_size, i_size;
-    ~Grid() {
-        free(vertices);
-    }
-};
+//
+// Created by dominykas on 11/27/25.
+//
+#include "../grid.hpp"
 
 Grid grid(int n) {
     float* vertices = (float*)malloc(sizeof(float) * (n) * (n) * 3);
@@ -68,17 +61,17 @@ Grid grid(int n, bool unit) {
         index += 12;
     }
     int p = 0;
-    for (int i = 0; i < n ; i++) {     
-            indices[ind] = p;
-            indices[ind + 1] = p +1;
-            indices[ind + 2] = p + 1; 
-            indices[ind + 3] = p + 2;
-            indices[ind + 4] = p + 2;
-            indices[ind + 5] = p + 3; 
-            indices[ind + 6] = p + 3;
-            indices[ind + 7] = p;
-            ind += 8;
-            p += 4;   
+    for (int i = 0; i < n ; i++) {
+        indices[ind] = p;
+        indices[ind + 1] = p +1;
+        indices[ind + 2] = p + 1;
+        indices[ind + 3] = p + 2;
+        indices[ind + 4] = p + 2;
+        indices[ind + 5] = p + 3;
+        indices[ind + 6] = p + 3;
+        indices[ind + 7] = p;
+        ind += 8;
+        p += 4;
     }
     return { vertices, indices,  (uint)(4 * 3 * n * sizeof(float)), (uint)(n* 8 * sizeof(uint)) };
 }

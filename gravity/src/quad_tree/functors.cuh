@@ -1,5 +1,6 @@
 #pragma once
-
+#include "../physics/points.cuh"
+#include "../settings.h"
 //segmented reduction
 struct shift {
     __host__ __device__ Key operator()(Key& x) const {    

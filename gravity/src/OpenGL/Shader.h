@@ -1,10 +1,10 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <fstream>
-#include<sstream>
-#include "include/glad/glad.h"
-#include "include/GLFW/glfw3.h"
+#include "../../../../../../usr/lib/gcc/x86_64-pc-linux-gnu/14.3.1/include/c++/iostream"
+#include "../../../../../../usr/lib/gcc/x86_64-pc-linux-gnu/14.3.1/include/c++/string"
+#include "../../../../../../usr/lib/gcc/x86_64-pc-linux-gnu/14.3.1/include/c++/fstream"
+#include"../../../../../../usr/lib/gcc/x86_64-pc-linux-gnu/14.3.1/include/c++/sstream"
+#include "glad.h"
+#include "glfw3.h"
 
 
 

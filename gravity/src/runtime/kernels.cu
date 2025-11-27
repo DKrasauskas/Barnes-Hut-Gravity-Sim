@@ -1,4 +1,9 @@
-#pragma once
+//
+// Created by dominykas on 11/27/25.
+//
+#include "kernels.cuh"
+#include "../physics/points.cuh"
+
 //copies data from cuda to opengl SSBO
 __global__ void cpy_kernel(float* dev_x, float* dev_y, float* dev_z, com* cm, Key* keys, int n) {
     uint idx = threadIdx.x + blockIdx.x * blockDim.x;
@@ -51,18 +56,18 @@ __global__ void traverse_tree(uint32_t* id, uint32_t* clen, uint32_t* nlen, com*
             index = stack[depth - 1] + 1; // go back to the previous node
             depth -= 1;
             if (depth == 0) break;
-            begin = nlen[stack[depth - 1]];         
+            begin = nlen[stack[depth - 1]];
             continue;
         }
 
         float px = nodes[index].x - planets[idx].x;
         float py = nodes[index].y - planets[idx].y;
         float dis = px * px + py * py;
-        float l = sqrt(dis) + 0.0001f;
+        float l = sqrt(dis) + 0.0005f;
         if (keys[index].scale * N_DIM / l < phi) {
             l = (l == 0) ? 0.2f : l;
-            ax += nodes[index].m * G / (l * l + 0.2f) * px / l;
-            ay += nodes[index].m * G / (l * l + 0.2f) * py / l;
+            ax += nodes[index].m * G / (l * l + 0.3f) * px / l;
+            ay += nodes[index].m * G / (l * l + 0.3f) * py / l;
             index++;
             continue;
         }
@@ -81,7 +86,7 @@ __global__ void traverse_tree(uint32_t* id, uint32_t* clen, uint32_t* nlen, com*
             index++;
             continue;
         }
-        //otherwise, push previous index to stack      
+        //otherwise, push previous index to stack
         stack[depth] = index; // 0
         child_count[depth] = clen[index]; // 3
         index = nlen[index];

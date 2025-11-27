@@ -1,4 +1,4 @@
-#include "Shader.h"
+#include "../Shader.h"
 
 Shader::Shader(const char* inputVertex, const char* inputFragment) {
     unsigned int vertex, fragment;
